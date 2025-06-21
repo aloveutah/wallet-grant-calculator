@@ -9,16 +9,16 @@ function calculate() {
     }
 
     // Calculations
-    const walletAmountPerQuarter = walletAmount / 4;
-    const amountPerGrantPrice = walletAmountPerQuarter / grantPrice;
-    const shareQuantity = Math.ceil(amountPerGrantPrice); // Round up
+    const walletAmountPerQuarter = walletAmount / 4;  // Calculate wallet amount per quarter
+    const divisionResult = walletAmountPerQuarter / grantPrice;  // Wallet Amount Per Quarter / Grant Price
+    const shareQuantity = Math.ceil(divisionResult); // Round up for share quantity
 
     // Display results
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `
         <h2>Results:</h2>
-        <p>Wallet Amount Per Quarter: $${walletAmountPerQuarter.toFixed(2)}</p>
-        <p>Grant Price: $${grantPrice.toFixed(2)}</p>
-        <p>Amount Per Grant Price: $${amountPerGrantPrice.toFixed(2)}</p>
-        <p>Share Quantity: ${shareQuantity}</p>`;
+        <p>Wallet Amount Per Quarter: $${walletAmountPerQuarter.toFixed(2)}</p> <!-- 2 decimal places with $ -->
+        <p>Grant Price: $${grantPrice.toFixed(2)}</p> <!-- 2 decimal places with $ -->
+        <p>Wallet Amount Per Quarter / Grant Price: ${divisionResult.toFixed(4)}</p> <!-- 4 decimal places -->
+        <p>Share Quantity: ${shareQuantity}</p>`; // No specific formatting needed
 }
